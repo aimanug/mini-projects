@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background: white;
+  color: currentColor;
+  border-radius: 6px;
+  text-decoration: none;
+  overflow: hidden;
+  transition-property: color;
+  transition-delay: 0.15s;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card.hover {
+  color: white;
+  transition-delay: 0;
+}
+
+.card,
+.card-image,
+.card-image::after,
+.card-author,
+.card-body,
+.card-foot,
+.card-border {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.51, 0.92, 0.24, 1);
+}
+.card-head {
+  position: relative;
+  padding-top: 70%;
+}
+.card-author {
+  position: absolute;
+  padding: 2em;
+  left: 0;
+  bottom: 0;
+  color: white;
+  transition-property: transform;
+  transition-delay: 0.15s;
+}
+.card.hover .card-author {
+  transition-delay: 0;
+}
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-image: url("img/bulbasaur.jpg");
+  transform-origin: top center;
+  transition-property: transform;
+  transition-delay: 0.15s;
+}
+.card-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  background: linear-gradient(
+    30deg,
+    rgba(26, 42, 99, 0.85),
+    rgba(26, 42, 99, 0.5)
+  );
+  transition-property: opacity;
+  transition-delay: 0.15s;
+}
+.card.hover .card-image {
+  transition-delay: 0;
+}
+.card.hover .card-image::after {
+  opacity: 1;
+  transition-delay: 0;
+}
+.card-body {
+  position: relative;
+  padding: 2em;
+  transition-property: transform;
+  transition-delay: 0.15s;
+}
+.card.hover .card-body {
+  transition-delay: 0;
+}
+.card-headline {
+  font-weight: 400;
+  margin: 0 0 0.8em;
+}
+.card-text {
+  line-height: 1.5;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  opacity: 0.8;
+  font-weight: 500;
+}
+.card-foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 2em 2em;
+  opacity: 0;
+  transition-property: opacity;
+}
+.card.hover .card-foot {
+  opacity: 1;
+  transition-delay: 0.15s;
+}
+.card.hover .card-border {
+  transform: none;
+  transition-delay: 0.15s;
+}
+.author {
+  display: flex;
+  align-items: center;
+}
+.author-image {
+  flex-shrink: 0;
+  margin-right: 1em;
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.author-content {
+  display: grid;
+  grid-gap: 0.4em;
+  font-size: 0.9em;
+  font-family: "Lato", sans-serif;
+}
+.author-header {
+  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+}
+.author-subheader {
+  line-height: 13px;
+  margin: 0;
+  opacity: 0.9;
+}
+.card-link:hover {
+  text-decoration: underline;
+}
